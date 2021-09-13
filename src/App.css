@@ -1,38 +1,316 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@800&family=Rambla:wght@700&family=Roboto+Condensed:ital,wght@0,700;1,700&family=Scada&display=swap');
+.app {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  height: 100vh;
+  font-family:'Roboto', sans-serif;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tweets-container {
+  margin-top: 44px;
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.tweetBox {
+  /* margin-left: 25px; */
+  margin-top: 15px;
+  font-family:'Roboto', sans-serif;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 10px;
+  width: 390px;
+}
+
+
+.header {
+  margin: 10px 10px 15px 10px;
+  display: grid;
+  grid-template-columns: 30px 30px auto;
+  grid-gap: 1rem;
+}
+
+.profile-pic{
+  height: 35px;
+  width: 35px;
+  margin: 0px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+.twitter-logo {
+  width: 27px;
+  margin: 0px 5px 10px 245px;
+}
+
+.username {
+  margin: 0px;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.subtitle-text, .handle {
+  margin: 0px;
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.handle {
+  text-transform: lowercase;
+}
+
+.message {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.date-time {
+  font-size: 0.7rem;
+  margin: 10px;
+  color: grey;
+  font-weight: 500;
+}
+
+.tweet-line-seperator {
+  /* width: 95%; */
+  border-top: 1px solid rgb(184, 184, 184);
+  margin-bottom: 0;
+}
+
+.tweet-info {
+  display: flex;
+}
+
+.tweet-info > p {
+  margin: 5px 15px 5px 5px;
+  color: grey;
+  font-size: 0.85rem;
+}
+
+.tweet-info > i {
+  margin: 5px 0px 5px 8px;
+  color: grey;
+  cursor: pointer;
+}
+
+#clickable-heart {
+  color: #ed4956;
+}
+
+/* HEADER SECTION */
+.header-container {
+  margin: 0;
+  width: 100%;
+  height: 8.5vh;
+  display: grid;
+  position: fixed;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white;
+  z-index: 2;
+  border-bottom: 2px solid grey;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-container > * {
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-twitter-logo {
+  /* margin-top: 5px; */
+  margin-left: 50px;
+  width: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-username {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 175px;
+}
+
+.header-username h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+  font-weight: 700;
+}
+
+
+.search-box {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  height: 25px;
+  width: 315px;
+  margin-left: 20px;
+}
+
+input {
+  padding: 10px 10px 10px 20px;
+  background-color: #eff3f4;
+  border: 0;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family:'Roboto', sans-serif, 'FontAwesome';
+  font-weight: 500;
+  opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-family:'Roboto', sans-serif, 'FontAwesome';
+  font-weight: 500;
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+  font-family:'Roboto', sans-serif, 'FontAwesome';
+  font-weight: 500;
+}
+
+/* TRENDING BOX SECTION */
+.trending-box-section {
+  justify-self: end;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.trending-box-container {
+  width: 350px;
+  height: 500px;  
+  background-color: #eff3f4;
+  border-radius: 20px;
+  font-family: 'Scada', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.trending-box-header {
+  margin: 5px 0px 5px 25px;
+  font-family: 'Changa', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.6px;
+}
+
+.trend-line-seperator {
+  margin-left: -25px;
+  border-top: 1px solid rgb(184, 184, 184);
+  margin-bottom: 0;
+}
+
+.trending-box-trend {
+  margin: 5px 0px 5px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.trending-box-trend > .trend-category {
+  font-size: 0.75rem;
+  color: grey;
+  margin-top: 5px;
+}
+
+.trending-box-trend > .trend-name {
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.trending-box-trend > .trend-tweets {
+  color: grey;
+  margin: 5px 0px;
+}
+
+.trending-box-footer {
+  margin: 10px 0px 5px 25px;
+}
+
+.trending-box-footer > a {
+  text-decoration: none;
+  color: #76c2f4;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* SIGNUP CONTAINER SECTION */
+.signup-container {
+  margin-top: 65px;
+  margin-bottom: 30px;
+  width: 350px;
+  height: 250px;
+  border: 1px solid grey;
+  border-radius: 20px;
+}
+
+.signup-header {
+  margin: 10px 0px 5px 25px;
+  font-weight: 700;
+  font-family: 'Scada', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.6px;
+}
+
+.signup-subheading {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  margin-left: 25px;
+  color: grey;
+  margin-bottom: 5px;
+}
+
+.signup-button {
+  border: 1px solid grey;
+  background-color: white;
+  margin: 6px 0px 5px 25px;
+  width: 85%;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+
+}
+
+.google.signup-button:before, .apple.signup-button:before {
+  content: '';
+  background: url('./google-logo.svg');
+  width: 20px;
+  height: 20px;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+
+.apple.signup-button:before, .no-image.signup-button:before {
+  content: '';
+  background: url('./apple-logo.png');
+  width: 20px;
+  height: 20px;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+
+.signup-button:hover {
+  background-color: #eff3f4;
+}
+
+.signup-footer {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  margin-left: 25px;
+  color: grey;
+}
+
+.counter-container {
+  margin-top: 300px;
 }
